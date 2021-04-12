@@ -59,7 +59,7 @@ class I2SCamera
     const uint32_t conf_reset_flags = I2S_RX_RESET_M | I2S_RX_FIFO_RESET_M | I2S_TX_RESET_M | I2S_TX_FIFO_RESET_M;
     I2S0.conf.val |= conf_reset_flags;
     I2S0.conf.val &= ~conf_reset_flags;
-    while (I2S0.state.rx_fifo_reset_back);
+    //while (I2S0.state.rx_fifo_reset_back); //FIXME this does not exist for esp32s2
   }
   
   void start()

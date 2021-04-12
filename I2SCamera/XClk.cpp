@@ -13,7 +13,7 @@ bool ClockEnable(int pin, int Hz)
     ledc_timer_config_t timer_conf;
     timer_conf.bit_num = (ledc_timer_bit_t)1;
     timer_conf.freq_hz = Hz;
-    timer_conf.speed_mode = LEDC_HIGH_SPEED_MODE;
+    timer_conf.speed_mode = LEDC_LOW_SPEED_MODE;//LEDC_HIGH_SPEED_MODE;  //FIXME doesn't exist for esp32s2
     timer_conf.timer_num = LEDC_TIMER_0;
     esp_err_t err = ledc_timer_config(&timer_conf);
     if (err != ESP_OK) {
@@ -25,7 +25,7 @@ bool ClockEnable(int pin, int Hz)
     ch_conf.timer_sel = LEDC_TIMER_0;
     ch_conf.intr_type = LEDC_INTR_DISABLE;
     ch_conf.duty = 1;
-    ch_conf.speed_mode = LEDC_HIGH_SPEED_MODE;
+    ch_conf.speed_mode = LEDC_LOW_SPEED_MODE;//LEDC_HIGH_SPEED_MODE;  //FIXME doesn't exist for esp32s2
     ch_conf.gpio_num = pin;
     
     ch_conf.hpoint = 0;//added by me

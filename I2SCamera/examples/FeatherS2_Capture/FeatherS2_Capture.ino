@@ -40,17 +40,18 @@ void setup()
   Serial.begin(115200);
 
   //camera setup
-  camera = new OV7670(OV7670::Mode::QQVGA_RGB565, 
-                      SIOD, SIOC, VSYNC, HREF, XCLK, PCLK, 
-                      D0, D1, D2, D3, D4, D5, D6, D7);
-                      
-  BMP::construct16BitHeader(bmpHeader, camera->xres, camera->yres);
+/*  camera = new OV7670(OV7670::Mode::QQVGA_RGB565, */
+/*                      SIOD, SIOC, VSYNC, HREF, XCLK, PCLK, */
+/*                      D0, D1, D2, D3, D4, D5, D6, D7);*/
+/*                      */
+/*  BMP::construct16BitHeader(bmpHeader, camera->xres, camera->yres);*/
 
 }
 
 void loop()
 {
-  camera->oneFrame();
-  Serial.write(bmpHeader, BMP::headerSize);
-  Serial.write(camera->frame, camera->xres * camera->yres * 2);
+  //camera->oneFrame();
+  //Serial.write(bmpHeader, BMP::headerSize);
+  //Serial.write(camera->frame, camera->xres * camera->yres * 2);
+  Serial.write("A\n");
 }
