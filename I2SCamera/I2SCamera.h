@@ -12,7 +12,7 @@
 #include "soc/io_mux_reg.h"
 #include "driver/gpio.h"
 #include "driver/periph_ctrl.h"
-#include "rom/lldesc.h"
+#include "esp32s2/rom/lldesc.h"  /*FIXME - is this the right version now?*/
 #include "XClk.h"
 #include "DMABuffer.h"
 

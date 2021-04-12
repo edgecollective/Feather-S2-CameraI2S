@@ -4,15 +4,22 @@
 
 //These pins should only work with the UM FeatherS2 board
 // NOTE: - on linux refer to ~/Arduino/hardware/espressif/esp32/variants/um_feather_s2/pins_arduino.h
-//       - when in doubt use the IO# on the official reference card pinout diagram  
-const int SIOD = SDA; //IO9
-const int SIOC = SCL; //IO8
+//       - when in doubt use the IO# on the official reference card pinout diagram 
+// connect: camera "3.3V"  to Feather  "3V3" (LDO 1)  FIXME maybe LDO 2 is better for low power apps, turns of while deep sleeping
+//          camera "RESET" to Feather "EN"
+//          camera "PDWN"  is unused
+// the remainder of pins as follows...
+// lib. pin name, Arduino Pin, "Camera board label" 
+const int SIOD = SDA; //IO9 "SDA"
+const int SIOC = SCL; //IO8 "SCL"
 
-const int VSYNC = 33;
-const int HREF  = 38;
+//the integers all name IO# pins
+const int VSYNC = 33; //"VS"
+const int HREF  = 38; //"HS"
 
-const int XCLK = 1;
-const int PCLK = 3;
+
+const int XCLK = 1;   //"MCLK"
+const int PCLK = 3;   //"PCLK"
 
 const int D0 = 7;
 const int D1 = 10;
