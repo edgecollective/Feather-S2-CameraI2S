@@ -2,23 +2,26 @@
 
 #include "BMP.h"
 
-const int SIOD = 21; //SDA
-const int SIOC = 22; //SCL
+//These pins should only work with the UM FeatherS2 board
+// NOTE: - on linux refer to ~/Arduino/hardware/espressif/esp32/variants/um_feather_s2/pins_arduino.h
+//       - when in doubt use the IO# on the official reference card pinout diagram  
+const int SIOD = SDA; //IO9
+const int SIOC = SCL; //IO8
 
-const int VSYNC = 34;
-const int HREF = 35;
+const int VSYNC = 33;
+const int HREF  = 38;
 
-const int XCLK = 32;
-const int PCLK = 33;
+const int XCLK = 1;
+const int PCLK = 3;
 
-const int D0 = 27;
-const int D1 = 17;
-const int D2 = 16;
-const int D3 = 15;
-const int D4 = 14;
-const int D5 = 13;
-const int D6 = 12;
-const int D7 = 4;
+const int D0 = 7;
+const int D1 = 10;
+const int D2 = 11;
+const int D3 = 5;
+const int D4 = 6;
+const int D5 = 12;
+const int D6 = 14;
+const int D7 = 18;
 
 OV7670 *camera;
 
